@@ -1,0 +1,13 @@
+Cópia do Keep
+
+A cópia deve conter os recursos de marcadores, listagem de todas as notas, lixeira e arquivamento. 
+Deve ser possível pesquisar uma nota pelo conteúdo ou título dela.
+Cada nota deve possuir uma cor distinta.
+Ao clicar na nota, deve ser possível exibi-la. 
+As notas devem ficar alinhadas em formato mansory grid.
+Deve ser possível alternar entre tema claro e tema escuro.
+
+Não vai ter lembretes
+Não é necessário criar marcadores ou criar notas
+
+Ao clicar na nota, deve ter o título, conteúdo completo, botão de arquivar, botão fechar e botão de excluir

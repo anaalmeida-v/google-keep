@@ -1,0 +1,23 @@
+Visual
+1 - Criar a estrutura do projeto
+    - Tamanhos de fonte
+    - Padrão de título e conteúdo
+    - Cores (tema preto e tema claro)
+    - Ícones
+2 - Criar o header
+3 - Criar o menu lateral
+4 - Criar o card de notas
+5 - Criar tema escuro/claro
+6 - Criar o mansory grid
+
+Funcionalidades
+6 - Consumir o JSON com as notas
+6 - Ao clicar numa nota, abrir o conteúdo dela
+7 - Renderizar os marcadores
+8 - Ao clicar num marcador, exibir apenas notas que pertençam a ele
+9 - Criar funcionalidade de arquivamento de notas
+10 - Criar funcionalidade de exclusão de notas
+11 - Criar funcionalidade de pesquisa
+12 - Ao clicar no arquivo, exibir notas arquivadas
+13 - Ao clicar na lixeira, exibir notas excluídas
+14 - Ao clicar em notas, exibir todas as notas
