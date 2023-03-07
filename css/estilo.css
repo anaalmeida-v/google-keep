@@ -42,6 +42,7 @@
 
         /**************header-left***************/
         .links-menulateral{
+            color: #202124;
             border-radius: 0 25px 25px 0;
             font-family: 'Google Sans','Roboto',Arial,sans-serif;
             font-size: 16px;
@@ -68,7 +69,7 @@
             background-color: #feefc3;
         }
 
-        .meulateral:active{
+        .menulateral:active{
             background-color: #f1f3f4;
         }
 
@@ -79,6 +80,7 @@
         }
 
         .titulo-notas{
+            color: #202124;
             letter-spacing: 1px;
             font-family: 'Google Sans','Roboto',Arial,sans-serif;
             font-size: 1em;
@@ -88,11 +90,20 @@
         }
 
         .conteudo-notas{
+            color: #202124;
             letter-spacing: 1px;
             font-family: 'Roboto',Arial,sans-serif;
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.5rem;
+        }
+
+        .nota-azul{
+            background-color: #aecbfa;
+        }
+
+        .nota-laranja{
+            color: #f28b82;
         }
 
         .icons-notas{
@@ -114,6 +125,10 @@
             padding: 8px 24px;
         }
 
+        .fechar-notas:hover{
+            background-color: #f9f9f9;
+        }
+
         .icons-notas:hover{
             border-radius: 50%;
             color: #222;
@@ -122,10 +137,130 @@
 
 
 
-        @media(max-width: 768px){
-            
-        }
-
-
 
 /**********   TEMA ESCURO     ***********/
+
+        /******geral*******/
+        body{
+            background-color: #202124;
+        }
+
+        /***********header********/
+
+        .icon-pesquisa-dark{
+            margin: 3px;
+            padding: 8px;
+            color: #e2e2e3;
+        }
+
+        .icon-pesquisa-dark:active{
+            border-radius: 50px;
+            color: #e4e4e5;
+            background-color: #2f3034;
+        }
+
+        .icon-menuhamburguer-dark{
+            width: 24px;
+            height: 24px;
+            color: #e2e2e3;
+        }
+
+        .icon-menuhamburguer-dark:active{
+            border-radius: 50px;
+            background-color: #2f3034;
+        }
+
+        
+        /**************header-left***************/
+        .links-menulateral-dark{
+            color: #e8eaed;
+            border-radius: 0 25px 25px 0;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: 16px;
+            margin-left: 20px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+        .icons-menulateral-dark{
+            width: 48px;
+            height: 24px;
+            color: #9aa0a6;
+        }
+
+        .icons-menulateral-dark:active{
+            color: #e8eaed;
+        }
+
+        .menu-lateral-dark:hover{
+            background-color: #28292c;
+        }
+
+        .menulateral-dark:active{
+            background-color: #41331c;
+        }
+
+        
+        /**********Notas***************/
+        .notas-dark{
+            background-color: #202124;
+            border: 1px solid transparent;
+            border-radius: 8px;
+        }
+
+        .titulo-notas-dark{
+            color: #e8eaed;
+            letter-spacing: 1px;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1.5em;
+            padding-top: 12px;
+        }
+
+        .conteudo-notas-dark{
+            color: #e8eaed;
+            letter-spacing: 1px;
+            font-family: 'Roboto',Arial,sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+        }
+
+        .nota-azul-dark{
+            background-color: #1e3a5f;
+        }
+
+        .nota-laranja-dark{
+            color: #5c2b29;
+        }
+
+        .icons-notas-dark{
+            color: #bebfbf;
+        }
+
+        .fechar-notas-dark{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 15px;
+            color: #dadce0;
+            letter-spacing: .01785714em;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: .875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            height: 36px;
+            padding: 8px 24px;
+        }
+
+        .fechar-notas-dark:hover{
+            background-color: #25262a;
+
+        }
+
+        .icons-notas-dark:hover{
+            border-radius: 50%;
+            color: #e1e1e2;
+            background-color: #313236;
+        }
