@@ -1,0 +1,131 @@
+/***********   TEMA CLARO   *************/
+    
+    /******************geral******************/
+    body{
+        box-sizing: border-box;
+    }
+
+    /***********header********/
+
+        .logo{
+            width: 40px;
+            height: 40px;
+        }
+
+        .icon-pesquisa{
+            margin: 3px;
+            padding: 8px;
+            color: #767676;
+        }
+
+        .icon-pesquisa:active{
+            border-radius: 50px;
+            color: #2222;
+            background-color: #ebecec;
+        }
+
+        .icon-menuhamburguer{
+            width: 24px;
+            height: 24px;
+            color: #5f6368;
+        }
+
+        .icon-menuhamburguer:active{
+            border-radius: 50px;
+            background-color: #ebecec;
+        }
+
+        .keep{
+            font-family: 'Product Sans',Arial,sans-serif;
+            font-size: 22px;
+        }
+
+        /**************header-left***************/
+        .links-menulateral{
+            border-radius: 0 25px 25px 0;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: 16px;
+            margin-left: 20px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+        .icons-menulateral{
+            width: 48px;
+            height: 24px;
+            color: #5f6368;
+        }
+
+        .icons-menulateral:active{
+            color: #202124;
+        }
+
+        .menu-lateral{
+            padding-left: 12px;
+        }
+
+        .menu-lateral:hover{
+            background-color: #feefc3;
+        }
+
+        .meulateral:active{
+            background-color: #f1f3f4;
+        }
+
+        /**********Notas***************/
+        .notas{
+            border: 1px solid transparent;
+            border-radius: 8px;
+        }
+
+        .titulo-notas{
+            letter-spacing: 1px;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1.5em;
+            padding-top: 12px;
+        }
+
+        .conteudo-notas{
+            letter-spacing: 1px;
+            font-family: 'Roboto',Arial,sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+        }
+
+        .icons-notas{
+            color: #4a4a4a;
+        }
+
+        .fechar-notas{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 15px;
+            color: rgba(0,0,0,.87);
+            letter-spacing: .01785714em;
+            font-family: 'Google Sans','Roboto',Arial,sans-serif;
+            font-size: .875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            height: 36px;
+            padding: 8px 24px;
+        }
+
+        .icons-notas:hover{
+            border-radius: 50%;
+            color: #222;
+            background-color: #e9eaea;
+        }
+
+
+
+        @media(max-width: 768px){
+            
+        }
+
+
+
+/**********   TEMA ESCURO     ***********/
