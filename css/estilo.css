@@ -1,22 +1,5 @@
-@font-face {
-    font-family: "robotoblack";
-    src: url("../font/Roboto/Roboto-Black.ttf")
-}
 
-@font-face {
-    font-family: "robotobold";
-    src: url("../font/Roboto/Roboto-Bold.ttf")
-}
 
-@font-face {
-    font-family: "robotoregular";
-    src: url("../font/Roboto/Roboto-Regular.ttf")
-}
-
-@font-face {
-    font-family: "robotomedium";
-    src: url("../font/Roboto/Roboto-Medium.ttf")
-}
 /***********   TEMA CLARO   *************/
 
 /******************geral******************/
@@ -77,7 +60,6 @@ body {
 }
 
 .pesquisar{
-    height: 100%;
     position: relative;
 }
 
@@ -89,9 +71,26 @@ body {
 }
 
 .pesquisar input{
+    background: #f1f3f4;
+    width: 400px;
     height:50px;
     padding-left: 50px;
     padding-right: 20px;
+    border: 0;
+}
+
+@media(min-width: 902px){
+    .pesquisar input{
+        left: auto;
+        width: 550px!important;
+    }
+}
+
+.pesquisar input:focus{
+    box-shadow: 0 0 0 0;
+    box-shadow: 1px 1px 5px #babbbc;
+    border: 0;
+    border: #b5b6b8;
 }
 
 .keep {
@@ -106,7 +105,12 @@ body {
     height: 40px;
 }
 
-.logo span{
+.darkmodebutton{
+    position: absolute;
+    border: 0%;
+    width: 24px;
+    height: 24px;
+    margin-left: 650px;   color: #000;
 }
 
 /*botao*/ 
@@ -115,6 +119,7 @@ body {
     margin-left: 8px;
     cursor: pointer;
     border-radius: 50%;
+    width: auto;
 }
 
 .botao-nav:hover{
@@ -193,13 +198,14 @@ body.active #nav-principal {
 .menu-lateral .navbar .nav-item a{
     display: block;
     padding: 15px;
-    font-family: "robotoregular";
+    font-family: 'ProductSans-MediumRegular';
     letter-spacing: .01785714em;
     font-size: 14px;
     margin-left: 20px;
     line-height: 18px;
-    font-weight: 500;
     color: #202124;
+    border-radius: 10px;
+    height: 48px;
 }
 
 .menu-lateral .nav-item:hover {
@@ -215,7 +221,6 @@ body.active #nav-principal {
     margin-top: 12px;
     width: 24px;
     margin-right: 10px;
-    height: 24px;
 }
 
 .icons:active{
@@ -232,6 +237,17 @@ body.active #nav-principal {
 }
 .icon-bookmark-empty:active{
     color: #202124;
+}
+
+.text-lateral{
+    font-family: "robotoregular";
+    margin-top: 19em;
+    color: #5f6368;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 5px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 /**********Notas***************/
