@@ -1,5 +1,3 @@
-
-
 /***********   TEMA CLARO   *************/
 
 /******************geral******************/
@@ -20,8 +18,13 @@ body {
     padding: 0;
     line-height: 0;
     padding: 0;
+    height: 100%;
+    transition: 0.3s;
 }
 
+input[type="checkbox"] {
+    display: none;
+}
 /***********header********/
 /**fixed top*/
 
@@ -59,34 +62,34 @@ body {
     background-color: #ebecec;
 }
 
-.pesquisar{
+.pesquisar {
     position: relative;
 }
 
-.pesquisar span{
+.pesquisar span {
     position: absolute;
     padding-top: 14px;
-    padding-left: 4x;
+    padding-left: 4px;
     color: #5f6368;
 }
 
-.pesquisar input{
+.pesquisar input {
     background: #f1f3f4;
     width: 400px;
-    height:50px;
+    height: 50px;
     padding-left: 50px;
     padding-right: 20px;
     border: 0;
 }
 
-@media(min-width: 902px){
-    .pesquisar input{
+@media(min-width: 902px) {
+    .pesquisar input {
         left: auto;
-        width: 550px!important;
+        width: 550px !important;
     }
 }
 
-.pesquisar input:focus{
+.pesquisar input:focus {
     box-shadow: 0 0 0 0;
     box-shadow: 1px 1px 5px #babbbc;
     border: 0;
@@ -94,10 +97,23 @@ body {
 }
 
 .keep {
-    font-family: 'Product Sans', Arial, sans-serif;
+    font-family: 'GoogleSansRegular';
     font-size: 22px;
     color: #5f6368;
     margin-left: 4px;
+}
+
+.nome-topo{
+    margin-left: 10px;
+    font-family: 'GoogleSansRegular';
+    margin-top: 20px;
+    font-size: 22px;
+    color: #5f6368;
+}
+
+.abas{
+    margin-left: 70vh;
+    margin-top: 20vh;
 }
 
 .logo {
@@ -105,15 +121,15 @@ body {
     height: 40px;
 }
 
-.darkmodebutton{
-    position: absolute;
-    border: 0%;
-    width: 24px;
-    height: 24px;
-    margin-left: 650px;   color: #000;
+.darkmodebutton {
+    position: fixed;
+    cursor: pointer;
+    height: 45px;
+    margin-left: 40%;
+    color: #000;
 }
 
-/*botao*/ 
+/*botao*/
 .botao-nav {
     text-align: center;
     margin-left: 8px;
@@ -122,7 +138,7 @@ body {
     width: auto;
 }
 
-.botao-nav:hover{
+.botao-nav:hover {
     background-color: #e8eaed;
 }
 
@@ -132,14 +148,16 @@ body {
     border: none;
     cursor: pointer;
 }
+
 .btn-menu button:active {
     background-color: #ebecec;
 }
-.linhas{
+
+.linhas {
     margin-bottom: 4px;
 }
 
-.linha{
+.linha {
     background-color: #5f6368;
     width: 20px;
     height: 2px;
@@ -149,21 +167,21 @@ body {
     background-color: #e8eaed;
 }
 
-button span{
+button span {
     color: #202124;
 }
 
 /*responsive*/
 #nav-principal {
     background-color: #fff;
-    width: 280px;
+    width: 320px;
     height: 100vh;
     z-index: 5;
     left: 0;
     top: 0;
     transition: all 0.4s ease-in-out;
     transform: translateX(-1500px);
-    margin-top:80px;
+    margin-top: 80px;
     padding-top: 5px;
     position: fixed;
     cursor: pointer;
@@ -176,17 +194,19 @@ body.active #nav-principal {
 .navbar-menu .navbar-nav {
     flex-wrap: wrap;
 }
+
 .navbar-menu {
     display: flex;
     transition: all 0.5s ease;
 }
 
-.navbar ul{
+.navbar ul {
     position: fixed;
     display: inline-block;
 }
 
 .menu-lateral .navbar .nav-item {
+    cursor: pointer;
     width: 100%;
     text-align: left;
     list-style: none;
@@ -195,12 +215,13 @@ body.active #nav-principal {
     border-radius: 0 25px 25px 0;
 }
 
-.menu-lateral .navbar .nav-item a{
+.menu-lateral .navbar .nav-item a {
     display: block;
     padding: 15px;
-    font-family: 'ProductSans-MediumRegular';
-    letter-spacing: .01785714em;
+    font-family: 'GoogleSansThin';
+    letter-spacing: 2px;
     font-size: 14px;
+    font-weight: bold;
     margin-left: 20px;
     line-height: 18px;
     color: #202124;
@@ -208,26 +229,55 @@ body.active #nav-principal {
     height: 48px;
 }
 
+.navbar .nav-item span{
+    font-weight: 600;
+}
+
 .menu-lateral .nav-item:hover {
     background-color: #f1f3f4;
 }
 
-.menulateral nav.item:active {
+.menu-lateral .nav-item:active {
     background-color: #feefc3;
 }
 
-.icons{
+.icone-abas {
+    margin-left: 120px;
+    font-size: 8em;
+    color: #ccc;
+    height: 120px;
+    opacity: 1;
+    width: 120px;
+}
+
+.marcador-abas{
+    transform: rotate(270deg);
+    margin-left: 120px;
+}
+
+.text-abas{
+    margin-top: 40px;
+    color: #5f6368;
+    cursor: default;
+    font-family: 'GoogleSansThin';
+    font-size: 1.375rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.75rem;
+}
+
+.icons {
     color: #5f6368;
     margin-top: 12px;
     width: 24px;
     margin-right: 10px;
 }
 
-.icons:active{
- color: #202124;
+.icons:active {
+    color: #202124;
 }
 
-.icon-bookmark-empty{
+li .icon-bookmark-empty {
     transform: rotate(270deg);
     margin-left: 10px;
     margin-top: 17px;
@@ -235,11 +285,12 @@ body.active #nav-principal {
     width: 24px;
     height: 24px;
 }
-.icon-bookmark-empty:active{
+
+.icon-bookmark-empty:active {
     color: #202124;
 }
 
-.text-lateral{
+.text-lateral {
     font-family: "robotoregular";
     margin-top: 19em;
     color: #5f6368;
@@ -251,15 +302,26 @@ body.active #nav-principal {
 }
 
 /**********Notas***************/
+
 .notas {
-    border: 1px solid transparent;
+    display: grid;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
+    margin: 10px;
+    margin-left: 0;
+    width: 100%;
+}
+
+.notas-container, .row{
+    margin-right: 200px;
 }
 
 .titulo-notas {
-    color: #202124;
+    color : #202124;
     letter-spacing: 1px;
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+    font-family: 'GoogleSansBold';
     font-size: 1em;
     font-weight: 500;
     padding-top: 12px;
@@ -268,7 +330,7 @@ body.active #nav-principal {
 .conteudo-notas {
     color: #202124;
     letter-spacing: 1px;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'GoogleSansMedium';
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
@@ -279,7 +341,7 @@ body.active #nav-principal {
 }
 
 .nota-laranja {
-    color: #f28b82;
+    background-color: #f28b82;
 }
 
 .icons-notas {
@@ -293,7 +355,7 @@ body.active #nav-principal {
     margin-right: 15px;
     color: rgba(0, 0, 0, .87);
     letter-spacing: .01785714em;
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+    font-family: 'GoogleSansRegular';
     font-size: .875rem;
     font-weight: 500;
     line-height: 1.25rem;
@@ -311,13 +373,15 @@ body.active #nav-principal {
     background-color: #e9eaea;
 }
 
-
-
-
 /**********   TEMA ESCURO     ***********/
 
-/******geral*******
+/******geral*******/
 body {
+    background-color: #202124;
+}
+
+.dark,
+.dark-header{
     background-color: #202124;
 }
 

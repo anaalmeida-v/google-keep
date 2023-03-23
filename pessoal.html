@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <div class="container-fluid"><!--Container-MenuTopo-->
         <nav class="navbar navbar-expand nav1"><!---nav-->
             <div class="row"><!--MenuHamburguer e BarraPesquisar-->
@@ -36,7 +37,7 @@
                         </div><!--//BotaoHamburguer-->
 
                         <div class="col-8"><!--Logo-->
-                            <a class="navbar-brand keep" href="#"><img class="logo" src="img/logo-keep.svg"><span>Keep</span></a>
+                            <a class="navbar-brand nome-topo" href="#"><span>Pessoal</span></a>
                         </div><!--//Logo-->
                     </div>
                 </div><!--//IconMenuHamburguer-Logo-->
@@ -50,12 +51,7 @@
                 </div><!--//BarraPesquisar-->
 
                 <div class="col-3">
-                    <input type="checkbox" name="change-theme" id="change-theme">
-                    <label for="change-theme">
-                        <img src="img/sun.png">
-                        <img src="img/moon.png">
-                    </label>
-                    <button><img class="darkmodebutton" src="img/darkmode.png"></button>
+                    <img class="darkmodebutton" src="img/darkmode.png">
                 </div>
             </div><!--//MenuHamburguer e BarraPesquisar-->
         </nav><!--//nav-->
@@ -79,43 +75,18 @@
                 </nav>
             </div><!--//MenuLateral-->
 
-            
-            <div class="col-7"><!--Conteúdo-->
-                <div class="container-fluid notas-container">
-                    <div class="row"><!--Row-->
+            <section>
+                <div class="pessoal abas">
+                    <div class="row">
                         <div class="col-12">
-                            <div class="notas nota1 nota-azul">
-                                <h2 class="titulo-notas">Nota 1</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+                            <div class="icon-bookmark-empty icone-abas marcador-abas"></div>                      
                         </div>
                         <div class="col-12">
-                            <div class="notas nota2 nota-laranja">
-                                <h2 class="titulo-notas">Nota 2</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+                            <div class="text-abas">Não há notas com este marcador ainda</div>
                         </div>
-                        <div class="col-12">
-                            <div class="notas nota3">
-                                <h2 class="titulo-notas">Nota 3</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="notas nota4">
-                                <h2 class="titulo-notas">Nota 4</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
-                        </div>
-                    </div><!--//Row-->
+                    </div>
                 </div>
-            </div><!--//Conteúdo-->
-        </div><!--//MenuLateral e ConteudoGeral-->
-    </div><!--//Container-->
+            </section>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -132,10 +103,6 @@
                 }
             });
         }
-    </script>
-
-    <script>
-        
     </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
