@@ -103,23 +103,8 @@ a:hover {
     margin-left: 20px;
 }
 
-.nome-topo {
-    margin-left: 10px;
-    font-family: 'GoogleSansRegular';
-    margin-top: 20px;
-    font-size: 22px;
+.keep span:hover{
     color: #5f6368;
-}
-
-.abas {
-    margin-left: 75vh;
-    margin-top: 20vh;
-}
-
-.logo {
-    margin-left: 15px;
-    width: 40px;
-    height: 40px;
 }
 
 input[type="checkbox"] {
@@ -144,14 +129,61 @@ input[type="checkbox"] {
     margin-left: 10em;
 }
 
+.logo {
+    width: 40px;
+    height: 40px;
+}
 
-/*botao*/
-.botao-nav {
+/****abas/localizadas-menulateral**/
+
+.abas {
+    margin-top: 20vh;
+}
+
+.nome-topo {
+    margin-left: 10px;
+    font-family: 'GoogleSansRegular';
+    margin-top: 20px;
+    font-size: 22px;
+    color: #5f6368;
+}
+
+.icone-abas {
+    margin-left: 60%;
+    align-items: center;
+    font-size: 8em;
+    color: #ccc;
+    height: 120px;
+    opacity: 1;
+    width: 120px;
+}
+
+.marcador-abas {
+    margin-left: 60%;
+    transform: rotate(270deg);
+}
+
+.text-abas {
+    margin-left: 15em;
+    margin-top: 40px;
+    color: #5f6368;
+    cursor: default;
+    font-family: 'GoogleSansThin';
+    font-size: 1.375rem;
+    font-weight: bold;
+    letter-spacing: 1px;
     text-align: center;
+    align-items: center;
+    line-height: 1.75rem;
+}
+
+/****   botao    ***/
+.botao-nav {
+    align-items: center;
     margin-left: 8px;
     cursor: pointer;
     border-radius: 50%;
-    width: auto;
+    margin-left: 15px;
 }
 
 .botao-nav:hover {
@@ -163,7 +195,6 @@ input[type="checkbox"] {
     margin-top: 18px;
     border: none;
     cursor: pointer;
-    margin-left: 15px;
 }
 
 .btn-menu button:active {
@@ -256,33 +287,6 @@ body.active #nav-principal {
 
 .menu-lateral .nav-item:active {
     background-color: #feefc3;
-}
-
-.icone-abas {
-    align-items: center;
-    font-size: 8em;
-    color: #ccc;
-    height: 120px;
-    opacity: 1;
-    width: 120px;
-}
-
-
-.marcador-abas {
-    transform: rotate(270deg);
-    margin-left: 120px;
-}
-
-.text-abas {
-    margin-top: 40px;
-    color: #5f6368;
-    cursor: default;
-    font-family: 'GoogleSansThin';
-    font-size: 1.375rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-align: center;
-    line-height: 1.75rem;
 }
 
 .icons {
@@ -460,7 +464,6 @@ li .icon-bookmark-empty {
 
 /*****    media queries      ***/
 
-/********** MAX:600PX ************/
 
 /****   MAX : 902PX   *********/
 
@@ -475,9 +478,8 @@ li .icon-bookmark-empty {
     }
 
     .darkmode span .icons-darkmode {
-        margin: 0;
-        width: 20px;
-        height: 20px;
+        padding: 0;
+        margin: 0%;
     }
 
     .keep,
@@ -485,7 +487,8 @@ li .icon-bookmark-empty {
         padding: 0;
         display: block;
     }
-    .btn-menu{
+
+    .btn-menu {
         margin-left: 15px;
     }
 }
@@ -493,22 +496,46 @@ li .icon-bookmark-empty {
 /********** MAX:768PX ************/
 
 @media(max-width:768px) {
-    .btn-menu {
-        margin-left: 15px;
-        margin-right: 0;
-    }
-
     .keep {
         display: block;
-        margin-left: 15px;
+        max-width: fit-content;
+    }
+
+    .text-abas {
+        margin-left: 8em;
+    }
+
+}
+
+/********** MAX:420PX ************/
+
+@media(max-width:420px) {
+    .keep {
+        display: block;
     }
 }
 
+/********** MAX:450PX ************/
+
+@media(max-width:450px) {
+    .icons-darkmode {
+        margin-left: 20px;
+    }
+
+    .notas {
+        width: 12vh;
+        margin: 15px 0;
+    }
+
+    .notas-container {
+        width: 100px;
+    }
+}
 
 /********** MAX:1020PX ************/
 
-@media(min-width:902px) and (max-width:1100px){
-    .pesquisar input{
+@media(min-width:902px) and (max-width:1100px) {
+    .pesquisar input {
         width: 600px;
     }
 }
