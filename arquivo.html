@@ -13,22 +13,24 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="font/animation.css">
     <link rel="stylesheet" type="text/css" href="css/icons.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="font/GoogleSans.css">
     <link rel="stylesheet" type="text/css" href="font/Roboto.css">
 
+    <script src="js/darktheme.js"></script>
+
 </head>
 
 <body>
-
     <div class="container-fluid"><!--Container-MenuTopo-->
         <nav class="navbar navbar-expand nav1"><!---nav-->
             <div class="row"><!--MenuHamburguer e BarraPesquisar-->
-                <div class="col-5"><!--IconMenuHamburguer-Logo-->
-                    <div class="row">
-                        <div class="col-2 botao-nav"><!--BotaoHamburguer-->
-                            <button class="navbartoggler btn-menu p-b-3" type="button" data-target="#nav-principal"
+                <div class="col-6 col-md-3"><!--IconMenuHamburguer-Logo-->
+                    <div class="row"><!--row ButtomMenuHamburguer/NavBarBrand-->
+                        <div class="col-3 botao-nav"><!--BotaoHamburguer-->
+                            <button class="navbartoggler btn-menu " type="button" data-target="#nav-principal"
                                 aria-controls="nav-principal" aria-label="Toggle navigation">
                                 <div class="linha linhas"></div>
                                 <div class="linha linhas"></div>
@@ -36,13 +38,14 @@
                             </button>
                         </div><!--//BotaoHamburguer-->
 
-                        <div class="col-8"><!--Logo-->
-                            <a class="navbar-brand nome-topo" href="#"><span>Arquivo</span></a>
+                        <div class="col-5"><!--Logo-->
+                            <a class="navbar-brand keep" href="#"><img class="logo"
+                                    src="img/logo-keep.svg"><span>Keep</span></a>
                         </div><!--//Logo-->
-                    </div>
+                    </div><!--//row ButtomMenuHamburguer/NavBarBrand-->
                 </div><!--//IconMenuHamburguer-Logo-->
 
-                <div class="col-3 pesquisar d-flex"><!--BarraPesquisar-->
+                <div class="col-3 col-md-6 pesquisar "><!--BarraPesquisar-->
                     <form class="search-container-fluid">
                         <span class="icon-search"></span>
                         <input class="form-control" type="search" placeholder="Pesquisar">
@@ -50,12 +53,18 @@
                     </form>
                 </div><!--//BarraPesquisar-->
 
-                <div class="col-3">
-                    <img class="darkmodebutton" src="img/darkmode.png">
-                </div>
+                <div class="col-1 col-md-3 darkmode"><!--darkmode botao-->
+                    <input type="checkbox" name="change-theme" id="change-theme">
+                    <label for="change-theme">
+                        <span class="icon-sun icons-darkmode"></span>
+                        <span class="icon-moon icons-darkmode"></span>
+                    </label>
+                </div><!--//darkmode botao-->
+
             </div><!--//MenuHamburguer e BarraPesquisar-->
         </nav><!--//nav-->
     </div><!--//Container-MenuTopo-->
+
 
     <div class="container-fluid"><!--Container-->
         <div class="row"><!--MenuLateral e ConteudoGeral-->

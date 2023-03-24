@@ -12,6 +12,10 @@ ul {
     list-style-type: none;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -22,9 +26,11 @@ body {
     transition: 0.3s;
 }
 
-input[type="checkbox"] {
-    display: none;
+a:hover {
+    text-transform: none;
+    text-decoration: none;
 }
+
 /***********header********/
 /**fixed top*/
 
@@ -38,6 +44,7 @@ input[type="checkbox"] {
     padding-left: 0;
     padding-right: 0;
     z-index: 0;
+    display: inline-block;
 }
 
 .icon-pesquisa {
@@ -75,18 +82,11 @@ input[type="checkbox"] {
 
 .pesquisar input {
     background: #f1f3f4;
-    width: 400px;
+    width: 700px;
     height: 50px;
     padding-left: 50px;
     padding-right: 20px;
     border: 0;
-}
-
-@media(min-width: 902px) {
-    .pesquisar input {
-        left: auto;
-        width: 550px !important;
-    }
 }
 
 .pesquisar input:focus {
@@ -100,10 +100,10 @@ input[type="checkbox"] {
     font-family: 'GoogleSansRegular';
     font-size: 22px;
     color: #5f6368;
-    margin-left: 4px;
+    margin-left: 20px;
 }
 
-.nome-topo{
+.nome-topo {
     margin-left: 10px;
     font-family: 'GoogleSansRegular';
     margin-top: 20px;
@@ -111,23 +111,39 @@ input[type="checkbox"] {
     color: #5f6368;
 }
 
-.abas{
-    margin-left: 70vh;
+.abas {
+    margin-left: 75vh;
     margin-top: 20vh;
 }
 
 .logo {
+    margin-left: 15px;
     width: 40px;
     height: 40px;
 }
 
-.darkmodebutton {
-    position: fixed;
-    cursor: pointer;
-    height: 45px;
-    margin-left: 40%;
-    color: #000;
+input[type="checkbox"] {
+    display: none;
+    margin-left: 20em;
 }
+
+.icon-moon {
+    display: none;
+}
+
+.icon-sun {
+    color: #000;
+    margin-top: .5em;
+}
+
+.icons-darkmode {
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    margin-left: 10em;
+}
+
 
 /*botao*/
 .botao-nav {
@@ -147,6 +163,7 @@ input[type="checkbox"] {
     margin-top: 18px;
     border: none;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .btn-menu button:active {
@@ -229,7 +246,7 @@ body.active #nav-principal {
     height: 48px;
 }
 
-.navbar .nav-item span{
+.navbar .nav-item span {
     font-weight: 600;
 }
 
@@ -242,7 +259,7 @@ body.active #nav-principal {
 }
 
 .icone-abas {
-    margin-left: 120px;
+    align-items: center;
     font-size: 8em;
     color: #ccc;
     height: 120px;
@@ -250,12 +267,13 @@ body.active #nav-principal {
     width: 120px;
 }
 
-.marcador-abas{
+
+.marcador-abas {
     transform: rotate(270deg);
     margin-left: 120px;
 }
 
-.text-abas{
+.text-abas {
     margin-top: 40px;
     color: #5f6368;
     cursor: default;
@@ -263,6 +281,7 @@ body.active #nav-principal {
     font-size: 1.375rem;
     font-weight: bold;
     letter-spacing: 1px;
+    text-align: center;
     line-height: 1.75rem;
 }
 
@@ -311,15 +330,22 @@ li .icon-bookmark-empty {
     border-radius: 8px;
     margin: 10px;
     margin-left: 0;
-    width: 100%;
+    max-width: 450px;
+    min-width: 300px;
+    cursor: pointer;
 }
 
-.notas-container, .row{
-    margin-right: 200px;
+.notas:hover {
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.notas-container,
+.row {
+    margin-right: 100px;
 }
 
 .titulo-notas {
-    color : #202124;
+    color: #202124;
     letter-spacing: 1px;
     font-family: 'GoogleSansBold';
     font-size: 1em;
@@ -338,10 +364,12 @@ li .icon-bookmark-empty {
 
 .nota-azul {
     background-color: #aecbfa;
+    border: #aecbfa;
 }
 
 .nota-laranja {
     background-color: #f28b82;
+    border: #f28b82;
 }
 
 .icons-notas {
@@ -373,134 +401,114 @@ li .icon-bookmark-empty {
     background-color: #e9eaea;
 }
 
-/**********   TEMA ESCURO     ***********/
+
+/**********   DARKMODE     ***********/
 
 /******geral*******/
-body {
-    background-color: #202124;
-}
-
 .dark,
-.dark-header{
+.dark nav {
     background-color: #202124;
+    color: #ccc;
 }
 
-/***********header********
-
-.icon-pesquisa-dark {
-    margin: 3px;
-    padding: 8px;
-    color: #e2e2e3;
+.dark .icon-sun {
+    display: none;
 }
 
-.icon-pesquisa-dark:active {
-    border-radius: 50px;
-    color: #e4e4e5;
-    background-color: #2f3034;
+.dark .icon-moon {
+    display: block;
+    margin-top: .5em;
 }
 
-.icon-menuhamburguer-dark {
-    width: 24px;
-    height: 24px;
-    color: #e2e2e3;
+.dark .icons {
+    color: #9aa0ac;
 }
 
-.icon-menuhamburguer-dark:active {
-    border-radius: 50px;
-    background-color: #2f3034;
-}
-
-
-/**************header-left***************
-.links-menulateral-dark {
-    color: #e8eaed;
-    border-radius: 0 25px 25px 0;
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
-    font-size: 16px;
-    margin-left: 20px;
-    line-height: 18px;
-    font-weight: 500;
-}
-
-.icons-menulateral-dark {
-    width: 48px;
-    height: 24px;
-    color: #9aa0a6;
-}
-
-.icons-menulateral-dark:active {
+.dark .icons:active {
     color: #e8eaed;
 }
 
-.menu-lateral-dark:hover {
+.dark .pesquisar input {
+    color: #525355;
+}
+
+.dark .menu-lateral .nav-item:hover {
     background-color: #28292c;
 }
 
-.menulateral-dark:active {
+.dark .menu-lateral .nav-item:active {
     background-color: #41331c;
 }
 
-
-/**********Notas***************
-.notas-dark {
-    background-color: #202124;
-    border: 1px solid transparent;
-    border-radius: 8px;
-}
-
-.titulo-notas-dark {
+.dark .text-lateral {
     color: #e8eaed;
-    letter-spacing: 1px;
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 1.5em;
-    padding-top: 12px;
 }
 
-.conteudo-notas-dark {
-    color: #e8eaed;
-    letter-spacing: 1px;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
+.dark .notas {
+    border-color: #5f6368;
 }
 
-.nota-azul-dark {
-    background-color: #1e3a5f;
+.dark .nota-azul {
+    color: #1e3a5f;
+    border-color: #1e3a5f;
 }
 
-.nota-laranja-dark {
+.dark .nota-laranja {
     color: #5c2b29;
+    border-color: #5c2b29;
 }
 
-.icons-notas-dark {
-    color: #bebfbf;
+/*****    media queries      ***/
+
+/********** MAX:600PX ************/
+
+/****   MAX : 902PX   *********/
+
+@media(max-width: 902px) {
+    .pesquisar input {
+        display: none;
+    }
+
+    .pesquisar span {
+        display: block;
+        width: 10px;
+    }
+
+    .darkmode span .icons-darkmode {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+
+    .keep,
+    .botao-nav {
+        padding: 0;
+        display: block;
+    }
+    .btn-menu{
+        margin-left: 15px;
+    }
 }
 
-.fechar-notas-dark {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-right: 15px;
-    color: #dadce0;
-    letter-spacing: .01785714em;
-    font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
-    font-size: .875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    height: 36px;
-    padding: 8px 24px;
+/********** MAX:768PX ************/
+
+@media(max-width:768px) {
+    .btn-menu {
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .keep {
+        display: block;
+        margin-left: 15px;
+    }
 }
 
-.fechar-notas-dark:hover {
-    background-color: #25262a;
 
+/********** MAX:1020PX ************/
+
+@media(min-width:902px) and (max-width:1100px){
+    .pesquisar input{
+        width: 600px;
+    }
 }
-
-.icons-notas-dark:hover {
-    border-radius: 50%;
-    color: #e1e1e2;
-    background-color: #313236;
-}*/
