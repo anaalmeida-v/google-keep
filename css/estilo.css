@@ -100,7 +100,6 @@ a:hover {
     font-family: 'GoogleSansRegular';
     font-size: 22px;
     color: #5f6368;
-    margin-left: 20px;
 }
 
 .keep span:hover{
@@ -179,11 +178,10 @@ input[type="checkbox"] {
 
 /****   botao    ***/
 .botao-nav {
+    margin-left: 10px;
     align-items: center;
-    margin-left: 8px;
     cursor: pointer;
     border-radius: 50%;
-    margin-left: 15px;
 }
 
 .botao-nav:hover {
@@ -229,7 +227,7 @@ button span {
     top: 0;
     transition: all 0.4s ease-in-out;
     transform: translateX(-1500px);
-    margin-top: 80px;
+    margin-top: 70px;
     padding-top: 5px;
     position: fixed;
     cursor: pointer;
@@ -408,11 +406,41 @@ li .icon-bookmark-empty {
 
 /**********   DARKMODE     ***********/
 
-/******geral*******/
+/**abas - dark  **/
+.dark .abass {
+    background-color: #202124;
+}
+
+.dark .nome-topo {
+    color: #e2e2e3;
+}
+
+.dark .icone-abas {
+    color: #4d4d50;
+}
+
+.dark .marcador-abas {
+    color: #4d4d50;
+}
+
+.dark .text-abas {
+    color: #9aa0a6;
+}
+
+/**   menu topo fixo - dark  **/
+
 .dark,
 .dark nav {
     background-color: #202124;
     color: #ccc;
+}
+
+.dark .nav1{
+    border-color: #5f6368;
+}
+
+.dark .keep{
+    color: #e2e2e3;
 }
 
 .dark .icon-sun {
@@ -420,20 +448,43 @@ li .icon-bookmark-empty {
 }
 
 .dark .icon-moon {
-    display: block;
-    margin-top: .5em;
-}
-
-.dark .icons {
-    color: #9aa0ac;
-}
-
-.dark .icons:active {
-    color: #e8eaed;
+    display: inline;
 }
 
 .dark .pesquisar input {
-    color: #525355;
+    background-color: #525355;
+    box-shadow: none;
+}
+
+.dark .pesquisar span{
+    color: #e4e4e5;
+}
+
+.dark .icon-pesquisa span:active {
+    color: #5f6368;
+}
+
+/****   botao - dark  ***/
+.dark .botao-nav:hover {
+    background-color: #2f3034;
+}
+
+.dark .btn-menu button:active {
+    background-color: #2f3034;
+}
+
+.dark .linha {
+    background-color: #e4e4e5;
+}
+
+.dark .btn-menu:hover{
+    background-color: #2f3034;
+}
+
+
+/**   menu lateral - dark  **/
+.dark #nav-principal {
+    background-color: #202124;
 }
 
 .dark .menu-lateral .nav-item:hover {
@@ -444,25 +495,68 @@ li .icon-bookmark-empty {
     background-color: #41331c;
 }
 
-.dark .text-lateral {
+.dark .menu-lateral .nav-item a{
     color: #e8eaed;
 }
 
+.dark .icons {
+    color: #9aa0ac;
+}
+
+.dark .icon-bookmark-empty{
+    color: #9aa0ac;
+}
+
+.dark .icons:active {
+    color: #e8eaed;
+}
+
+.dark .icon-bookmark-empty:active{
+    color: #e8eaed;
+}
+
+.dark li .text-lateral{
+    color: #9aa0a6;
+}
+
+/**  notas - dark  **/
 .dark .notas {
     border-color: #5f6368;
 }
 
-.dark .nota-azul {
-    color: #1e3a5f;
+.dark .nota-azul{
+    background-color: #1e3a5f;
     border-color: #1e3a5f;
 }
 
 .dark .nota-laranja {
-    color: #5c2b29;
+    background-color: #5c2b29;
     border-color: #5c2b29;
 }
 
-/*****    media queries      ***/
+.dark .titulo-notas {
+    color: #e8eaed;
+}
+
+.dark .conteudo-notas {
+    color: #e8eaed;
+}
+
+.dark .icons-notas {
+    color: #bebfbf;
+}
+
+.dark .fechar-notas:hover {
+    background-color: #f9f9f9;
+}
+
+.dark .icons-notas:hover {
+    border-radius: 50%;
+    color: #222;
+    background-color: #e9eaea;
+}
+
+/*****    media queries - dark  ***/
 
 
 /****   MAX : 902PX   *********/
@@ -485,7 +579,6 @@ li .icon-bookmark-empty {
     .keep,
     .botao-nav {
         padding: 0;
-        display: block;
     }
 
     .btn-menu {
@@ -532,10 +625,14 @@ li .icon-bookmark-empty {
     }
 }
 
-/********** MAX:1020PX ************/
+/********** 902-1100 ************/
 
 @media(min-width:902px) and (max-width:1100px) {
     .pesquisar input {
         width: 600px;
+    }
+    .botao-nav{
+        margin:0;
+        margin-left: 5px;
     }
 }
