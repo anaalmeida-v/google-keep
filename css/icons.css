@@ -44,7 +44,6 @@
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
   margin-left: 12px;
-
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,6 +53,8 @@
 }
 
 .icon-sun:before {
+  margin-left: 5em;
+  margin-top: 10px;
   content: '\e800';
 }
 
@@ -84,6 +85,8 @@
 
 /* '' */
 .icon-moon:before {
+  margin-left: 5em;
+  margin-top: 10px;
   content: '\f186';
 }
 

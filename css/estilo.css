@@ -100,9 +100,10 @@ a:hover {
     font-family: 'GoogleSansRegular';
     font-size: 22px;
     color: #5f6368;
+    margin-left: 15px;
 }
 
-.keep span:hover{
+.keep span:hover {
     color: #5f6368;
 }
 
@@ -125,7 +126,6 @@ input[type="checkbox"] {
     cursor: pointer;
     width: 150px;
     height: 150px;
-    margin-left: 10em;
 }
 
 .logo {
@@ -140,7 +140,7 @@ input[type="checkbox"] {
 }
 
 .nome-topo {
-    margin-left: 10px;
+    margin-left: 5px;
     font-family: 'GoogleSansRegular';
     margin-top: 20px;
     font-size: 22px;
@@ -158,12 +158,12 @@ input[type="checkbox"] {
 }
 
 .marcador-abas {
-    margin-left: 60%;
+    margin-left: 45%;
     transform: rotate(270deg);
 }
 
 .text-abas {
-    margin-left: 15em;
+    margin-left: 15%;
     margin-top: 40px;
     color: #5f6368;
     cursor: default;
@@ -178,7 +178,7 @@ input[type="checkbox"] {
 
 /****   botao    ***/
 .botao-nav {
-    margin-left: 10px;
+    margin-left: 15px;
     align-items: center;
     cursor: pointer;
     border-radius: 50%;
@@ -193,6 +193,7 @@ input[type="checkbox"] {
     margin-top: 18px;
     border: none;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .btn-menu button:active {
@@ -227,7 +228,7 @@ button span {
     top: 0;
     transition: all 0.4s ease-in-out;
     transform: translateX(-1500px);
-    margin-top: 70px;
+    margin-top: 68.5px;
     padding-top: 5px;
     position: fixed;
     cursor: pointer;
@@ -341,11 +342,6 @@ li .icon-bookmark-empty {
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
-.notas-container,
-.row {
-    margin-right: 100px;
-}
-
 .titulo-notas {
     color: #202124;
     letter-spacing: 1px;
@@ -435,11 +431,15 @@ li .icon-bookmark-empty {
     color: #ccc;
 }
 
-.dark .nav1{
+.dark .nav1 {
     border-color: #5f6368;
 }
 
-.dark .keep{
+.dark .pesquisar input:active {
+    background-color: #fff;
+}
+
+.dark .keep {
     color: #e2e2e3;
 }
 
@@ -456,7 +456,7 @@ li .icon-bookmark-empty {
     box-shadow: none;
 }
 
-.dark .pesquisar span{
+.dark .pesquisar span {
     color: #e4e4e5;
 }
 
@@ -477,7 +477,7 @@ li .icon-bookmark-empty {
     background-color: #e4e4e5;
 }
 
-.dark .btn-menu:hover{
+.dark .btn-menu:hover {
     background-color: #2f3034;
 }
 
@@ -495,7 +495,7 @@ li .icon-bookmark-empty {
     background-color: #41331c;
 }
 
-.dark .menu-lateral .nav-item a{
+.dark .menu-lateral .nav-item a {
     color: #e8eaed;
 }
 
@@ -503,7 +503,7 @@ li .icon-bookmark-empty {
     color: #9aa0ac;
 }
 
-.dark .icon-bookmark-empty{
+.dark .icon-bookmark-empty {
     color: #9aa0ac;
 }
 
@@ -511,11 +511,11 @@ li .icon-bookmark-empty {
     color: #e8eaed;
 }
 
-.dark .icon-bookmark-empty:active{
+.dark .icon-bookmark-empty:active {
     color: #e8eaed;
 }
 
-.dark li .text-lateral{
+.dark li .text-lateral {
     color: #9aa0a6;
 }
 
@@ -524,7 +524,7 @@ li .icon-bookmark-empty {
     border-color: #5f6368;
 }
 
-.dark .nota-azul{
+.dark .nota-azul {
     background-color: #1e3a5f;
     border-color: #1e3a5f;
 }
@@ -558,6 +558,78 @@ li .icon-bookmark-empty {
 
 /*****    media queries - dark  ***/
 
+/****   MAX:575PX    *****/
+@media(max-width:575px) {
+    .nome-topo {
+        margin-left: 20px;
+    }
+
+    .btn-menu {
+        padding: 0;
+        margin-left: -10px;
+    }
+
+    .text-abas {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .text-arquivo{
+        margin-left: 20%;
+    }
+    .lixeira{
+        margin-left: 25%;
+    }
+    .text-lixeira{
+        margin-left: 15%;
+    }
+    .arquivo{
+        margin-left: 25%;
+    }
+    .icone-abas{
+        margin-left:30%
+    }
+}
+
+/****  MIN:575px MAX:760px   *****/
+@media(min-width:600px) and (max-width:790px) {
+    .text-abas {
+        font-size: 20px;
+        margin-left: 50%;
+    }
+    .icone-abas {
+        margin-left: 65%;
+    }
+    .text-lixeira{
+        margin-left: -30%;
+    }
+    .lixeira{
+        margin-left: 10%;
+    }
+}
+
+/********** MAX:768PX ************/
+
+@media(max-width:768px) {
+    .keep {
+        margin-left: 15px;
+    }
+}
+
+
+/****    790PX - 910PX    ****/
+@media(min-width:790px) and (max-width:910px){
+    .text-abas{
+        margin-left:-50%;
+        font-size: 18px;
+    }
+    .marcador-abas
+    {
+        margin-left: 10%;
+    }
+    .icone-abas{
+        margin-left: 10%;
+    }
+}
 
 /****   MAX : 902PX   *********/
 
@@ -571,68 +643,34 @@ li .icon-bookmark-empty {
         width: 10px;
     }
 
-    .darkmode span .icons-darkmode {
-        padding: 0;
-        margin: 0%;
-    }
-
-    .keep,
-    .botao-nav {
-        padding: 0;
-    }
-
     .btn-menu {
         margin-left: 15px;
     }
 }
 
-/********** MAX:768PX ************/
-
-@media(max-width:768px) {
-    .keep {
-        display: block;
-        max-width: fit-content;
-    }
-
-    .text-abas {
-        margin-left: 8em;
-    }
-
-}
-
-/********** MAX:420PX ************/
-
-@media(max-width:420px) {
-    .keep {
-        display: block;
-    }
-}
-
-/********** MAX:450PX ************/
-
-@media(max-width:450px) {
-    .icons-darkmode {
-        margin-left: 20px;
-    }
-
-    .notas {
-        width: 12vh;
-        margin: 15px 0;
-    }
-
-    .notas-container {
-        width: 100px;
-    }
-}
-
 /********** 902-1100 ************/
 
-@media(min-width:902px) and (max-width:1100px) {
+@media(min-width:902px) and (max-width:1200px) {
     .pesquisar input {
-        width: 600px;
+        width: 550px;
     }
-    .botao-nav{
-        margin:0;
-        margin-left: 5px;
+    .text-abas{
+        margin-left: 230px;
+    }
+    .marcador-abas{
+        margin-left: 55%;
+    }
+    .lixeira{
+        margin-left: 10%;
+    }
+    .text-lixeira{
+        margin-left: -30%;
+    }
+}
+
+/*****   1200PX     *******/
+@media(min-width:1200px){
+    .abas{
+        margin-left: -70%;
     }
 }
