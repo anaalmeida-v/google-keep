@@ -12,10 +12,6 @@ ul {
     list-style-type: none;
 }
 
-.container-fluid {
-    padding: 0;
-}
-
 body {
     box-sizing: border-box;
     margin: 0;
@@ -33,16 +29,16 @@ a:hover {
 
 /***********header********/
 /**fixed top*/
+.container-menu {
+    border-bottom: 0.0001px solid #daced0;
+}
 
 .nav1 {
     width: 100%;
-    border-bottom: 0.0001px solid #daced0;
-    border-top: 0.0001px solid #dadce0;
+    border: 0;
     top: 0;
     right: 0;
     left: 0;
-    padding-left: 0;
-    padding-right: 0;
     z-index: 0;
     display: inline-block;
 }
@@ -67,6 +63,9 @@ a:hover {
     border-radius: 50px;
     color: #2222;
     background-color: #ebecec;
+}
+
+.search{
 }
 
 .pesquisar {
@@ -100,7 +99,6 @@ a:hover {
     font-family: 'GoogleSansRegular';
     font-size: 22px;
     color: #5f6368;
-    margin-left: 15px;
 }
 
 .keep span:hover {
@@ -118,14 +116,11 @@ input[type="checkbox"] {
 
 .icon-sun {
     color: #000;
-    margin-top: .5em;
 }
 
 .icons-darkmode {
     font-size: 1.4rem;
     cursor: pointer;
-    width: 150px;
-    height: 150px;
 }
 
 .logo {
@@ -148,8 +143,7 @@ input[type="checkbox"] {
 }
 
 .icone-abas {
-    margin-left: 60%;
-    align-items: center;
+    margin: auto;
     font-size: 8em;
     color: #ccc;
     height: 120px;
@@ -158,12 +152,10 @@ input[type="checkbox"] {
 }
 
 .marcador-abas {
-    margin-left: 45%;
     transform: rotate(270deg);
 }
 
 .text-abas {
-    margin-left: 15%;
     margin-top: 40px;
     color: #5f6368;
     cursor: default;
@@ -177,23 +169,19 @@ input[type="checkbox"] {
 }
 
 /****   botao    ***/
-.botao-nav {
-    margin-left: 15px;
+.btn-menu {
     align-items: center;
     cursor: pointer;
     border-radius: 50%;
-}
-
-.botao-nav:hover {
-    background-color: #e8eaed;
-}
-
-.btn-menu {
     background: none;
-    margin-top: 18px;
     border: none;
     cursor: pointer;
-    margin-left: 15px;
+    padding: 18px 15px;
+    background-color: transparent;
+}
+
+.btn-menu:hover {
+    background-color: #e8eaed;
 }
 
 .btn-menu button:active {
@@ -236,6 +224,17 @@ button span {
 
 body.active #nav-principal {
     transform: translateX(0);
+}
+
+.navbar-container {
+    position: absolute;
+    left: 0;
+}
+
+.navbar-width {
+    width: 288px;
+    background: transparent;
+    position: relative;
 }
 
 .navbar-menu .navbar-nav {
@@ -324,15 +323,15 @@ li .icon-bookmark-empty {
 }
 
 /**********Notas***************/
-
+.notas-container {
+    width: 100%;
+}
 .notas {
-    display: grid;
+    margin: 10px auto;
     text-align: center;
     padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin: 10px;
-    margin-left: 0;
     max-width: 450px;
     min-width: 300px;
     cursor: pointer;
@@ -399,6 +398,9 @@ li .icon-bookmark-empty {
     background-color: #e9eaea;
 }
 
+.content-container {
+    width: 100%;
+}
 
 /**********   DARKMODE     ***********/
 
@@ -465,22 +467,15 @@ li .icon-bookmark-empty {
 }
 
 /****   botao - dark  ***/
-.dark .botao-nav:hover {
-    background-color: #2f3034;
-}
-
-.dark .btn-menu button:active {
+.dark .btn-menu:hover,
+.dark .btn-menu:focus,
+.dark .btn-menu:active {
     background-color: #2f3034;
 }
 
 .dark .linha {
     background-color: #e4e4e5;
 }
-
-.dark .btn-menu:hover {
-    background-color: #2f3034;
-}
-
 
 /**   menu lateral - dark  **/
 .dark #nav-principal {
@@ -573,21 +568,6 @@ li .icon-bookmark-empty {
         font-size: 16px;
         margin-left: 10px;
     }
-    .text-arquivo{
-        margin-left: 20%;
-    }
-    .lixeira{
-        margin-left: 25%;
-    }
-    .text-lixeira{
-        margin-left: 15%;
-    }
-    .arquivo{
-        margin-left: 25%;
-    }
-    .icone-abas{
-        margin-left:30%
-    }
 }
 
 /****  MIN:575px MAX:760px   *****/
@@ -595,15 +575,6 @@ li .icon-bookmark-empty {
     .text-abas {
         font-size: 20px;
         margin-left: 50%;
-    }
-    .icone-abas {
-        margin-left: 65%;
-    }
-    .text-lixeira{
-        margin-left: -30%;
-    }
-    .lixeira{
-        margin-left: 10%;
     }
 }
 
@@ -622,18 +593,11 @@ li .icon-bookmark-empty {
         margin-left:-50%;
         font-size: 18px;
     }
-    .marcador-abas
-    {
-        margin-left: 10%;
-    }
-    .icone-abas{
-        margin-left: 10%;
-    }
 }
 
 /****   MAX : 902PX   *********/
 
-@media(max-width: 902px) {
+@media(max-width: 992px) {
     .pesquisar input {
         display: none;
     }
@@ -654,23 +618,12 @@ li .icon-bookmark-empty {
     .pesquisar input {
         width: 550px;
     }
-    .text-abas{
-        margin-left: 230px;
-    }
-    .marcador-abas{
-        margin-left: 55%;
-    }
-    .lixeira{
-        margin-left: 10%;
-    }
-    .text-lixeira{
-        margin-left: -30%;
-    }
 }
 
-/*****   1200PX     *******/
-@media(min-width:1200px){
-    .abas{
-        margin-left: -70%;
+/* 992-... */
+@media(min-width:992px) {
+    .btndark span .icon-search{
+        background-color: transparent;
+        display: none;
     }
 }

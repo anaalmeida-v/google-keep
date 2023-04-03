@@ -20,28 +20,21 @@
 </head>
 
 <body>
-    <div class="container-fluid"><!--Container-MenuTopo-->
+    <div class="container-fluid container-menu"><!--Container-MenuTopo-->
         <nav class="navbar navbar-expand nav1"><!---nav-->
             <div class="row"><!--MenuHamburguer e BarraPesquisar-->
-                <div class="col-6 col-sm-6 col-md-3"><!--IconMenuHamburguer-Logo-->
-                    <div class="row"><!--row ButtomMenuHamburguer/NavBarBrand-->
-                        <div class="col-1 col-sm-3 botao-nav"><!--BotaoHamburguer-->
-                            <button class="navbartoggler btn-menu " type="button" data-target="#nav-principal"
-                                aria-controls="nav-principal" aria-label="Toggle navigation">
-                                <div class="linha linhas"></div>
-                                <div class="linha linhas"></div>
-                                <div class="linha"></div>
-                            </button>
-                        </div><!--//BotaoHamburguer-->
+                <div class="col-8 col-lg-3">
+                    <button class="navbartoggler btn-menu " type="button" data-target="#nav-principal"
+                        aria-controls="nav-principal" aria-label="Toggle navigation">
+                        <div class="linha linhas"></div>
+                        <div class="linha linhas"></div>
+                        <div class="linha"></div>
+                    </button>
+                    <a class="navbar-brand keep" href="#"><img class="logo"
+                        src="img/logo-keep.svg"><span>Keep</span></a>
+                </div>
 
-                        <div class="col-8"><!--Logo-->
-                            <a class="navbar-brand keep" href="#"><img class="logo"
-                                    src="img/logo-keep.svg"><span>Keep</span></a>
-                        </div><!--//Logo-->
-                    </div><!--//row ButtomMenuHamburguer/NavBarBrand-->
-                </div><!--//IconMenuHamburguer-Logo-->
-
-                <div class="col-2 col-md-6 pesquisar "><!--BarraPesquisar-->
+                <div class="col-3 d-none d-lg-block col-lg-6 pesquisar "><!--BarraPesquisar-->
                     <form class="search-container-fluid">
                         <span class="icon-search"></span>
                         <input class="form-control" type="search" placeholder="Pesquisar">
@@ -49,7 +42,8 @@
                     </form>
                 </div><!--//BarraPesquisar-->
 
-                <div class="col-4 col-sm-1 col-md-3"><!--darkmode botao-->
+                <div class="col-4 col-lg-3 text-right btndark"><!--darkmode botao-->
+                    <span class="icon-search"></span>
                     <input type="checkbox" name="change-theme" id="change-theme" />
                     <label for="change-theme">
                         <span class="icon-sun icons-darkmode"></span>
@@ -63,7 +57,8 @@
 
     <div class="container-fluid"><!--Container-->
         <div class="row"><!--MenuLateral e ConteudoGeral-->
-            <div class="col-4"><!--MenuLateral-->
+            <div class="navbar-container"><!--MenuLateral-->
+                <div class="navbar-width"></div>
                 <nav class="navbar navbar-expand-lg d-flex">
                     <div class="menu-lateral">
                         <ul class="navbar listas-padrao" id="nav-principal">
@@ -86,42 +81,40 @@
             </div><!--//MenuLateral-->
 
 
-            <div class="col-8"><!--Conteúdo-->
-                <div class="container-fluid notas-container d-flex">
-                    <div class="row"><!--Row-->
-                        <div class="col-12">
-                            <div class="notas nota1 nota-azul">
-                                <h2 class="titulo-notas">Nota 1</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+            <div class="container-fluid notas-container">
+                <div class="row"><!--Row-->
+                    <div class="col-12">
+                        <div class="notas nota1 nota-azul">
+                            <h2 class="titulo-notas">Nota 1</h2>
+                            <p class="conteudo-notas">Conteúdo</p>
+                            <form class="marcador"></form>
                         </div>
-                        <div class="col-12">
-                            <div class="notas nota2 nota-laranja">
-                                <h2 class="titulo-notas">Nota 2</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="notas nota2 nota-laranja">
+                            <h2 class="titulo-notas">Nota 2</h2>
+                            <p class="conteudo-notas">Conteúdo</p>
+                            <form class="marcador"></form>
                         </div>
-                        <div class="col-12">
-                            <div class="notas nota3">
-                                <h2 class="titulo-notas">Nota 3</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="notas nota3">
+                            <h2 class="titulo-notas">Nota 3</h2>
+                            <p class="conteudo-notas">Conteúdo</p>
+                            <form class="marcador"></form>
                         </div>
-                        <div class="col-12">
-                            <div class="notas nota4">
-                                <h2 class="titulo-notas">Nota 4</h2>
-                                <p class="conteudo-notas">Conteúdo</p>
-                                <form class="marcador"></form>
-                            </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="notas nota4">
+                            <h2 class="titulo-notas">Nota 4</h2>
+                            <p class="conteudo-notas">Conteúdo</p>
+                            <form class="marcador"></form>
                         </div>
-                    </div><!--//Row-->
-                </div>
-            </div><!--//Conteúdo-->
-        </div><!--//MenuLateral e ConteudoGeral-->
-    </div><!--//Container-->
+                    </div>
+                </div><!--//Row-->
+            </div>
+        </div><!--//Conteúdo-->
+    </div><!--//MenuLateral e ConteudoGeral-->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
