@@ -362,16 +362,35 @@ li .icon-bookmark-empty {
     border: #aecbfa;
 }
 
+.nota-azul .icones-nota-aberta i{
+    color: #323b49;
+}
+
+.nota-azul .icones-nota-aberta i:hover{
+    background-color: #a3bde6;
+    color: #171a20;
+    padding: 5px 5px 5px 0;
+}
+
 .nota-laranja {
     background-color: #f28b82;
     border: #f28b82;
 }
 
-.icons-notas {
-    color: #4a4a4a;
+.nota-laranja .icones-nota-aberta i{
+    color: #462826;
 }
 
-.fechar-notas {
+.nota-laranja .icones-nota-aberta i:hover{
+    color: #1f1211;
+    background-color: #de867e;
+    padding: 5px 5px 5px 0;
+    margin: 1px;
+}
+
+.icones-nota-aberta{
+    border: none;
+    background: none;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -380,19 +399,15 @@ li .icon-bookmark-empty {
     letter-spacing: .01785714em;
     font-family: 'GoogleSansRegular';
     font-size: .875rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.25rem;
     height: 36px;
-    padding: 8px 24px;
+    color: #4a4a4a;
 }
 
-.fechar-notas:hover {
-    background-color: #f9f9f9;
-}
-
-.icons-notas:hover {
+.icones-nota-aberta i:hover{
     border-radius: 50%;
-    color: #222;
+    color: #212121;
     background-color: #e9eaea;
 }
 
@@ -522,9 +537,43 @@ li .icon-bookmark-empty {
     border-color: #1e3a5f;
 }
 
+.dark .nota-azul .icones-nota-aberta i{
+    color: #bec6d1;
+}
+
+.dark .nota-azul .icones-nota-aberta i:hover{
+    color: #e2e6ea;
+    background-color: #2f4869;
+    padding: 5px 5px 5px 0;
+}
+
 .dark .nota-laranja {
     background-color: #5c2b29;
     border-color: #5c2b29;
+}
+
+.dark .nota-laranja .icones-nota-aberta i{
+    color: #d0c1c1;
+}
+
+.dark .nota-laranja .icones-nota-aberta i:hover{
+    color: #eae4e3;
+    background-color: #643b3a;
+    padding: 5px 5px 5px 0;
+}
+
+.dark .icones-nota-aberta{
+    border: none;
+    background: none;
+}
+
+.dark .icones-nota-aberta{
+    color: #bebfbf;
+}
+
+.dark .icones-nota-aberta i:hover{
+    color: #e2e2e3;
+    background-color: #313236;
 }
 
 .dark .titulo-notas {
