@@ -16,8 +16,6 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    line-height: 0;
-    padding: 0;
     height: 100%;
     transition: 0.3s;
 }
@@ -626,4 +624,29 @@ li .icon-bookmark-empty {
         background-color: transparent;
         display: none;
     }
+}
+
+.nota-aberta {
+    display: none;
+}
+
+.nota-aberta.ativo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #202124bf;
+    top: 0;
+    left: 0;
+    position: fixed;
+    transition: all linear 1s;
+}
+
+.nota-aberta.ativo .notas {
+    max-width: 600px;
+    max-height: 70vh;
+    width: 100%;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    transition: all linear 1s;
+    overflow-y: auto;
 }

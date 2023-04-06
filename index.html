@@ -38,7 +38,6 @@
                     <form class="search-container-fluid">
                         <span class="icon-search"></span>
                         <input class="form-control" type="search" placeholder="Pesquisar">
-                        <i class="icon-pesquisa"></i>
                     </form>
                 </div><!--//BarraPesquisar-->
 
@@ -64,13 +63,7 @@
                         <ul class="navbar listas-padrao" id="nav-principal">
                             <li class="nav-item"><span class="icon-lamp icons"></span><a href="index.html"
                                     class="nav-link">Notas</a></li>
-                            <li class="nav-item"><span class="icon-bookmark-empty"></span><a href="pessoal.html"
-                                    class="nav-link">Pessoal</a></li>
-                            <li class="nav-item"><span class="icon-bookmark-empty"></span><a href="planos.html"
-                                    class="nav-link">Planos</a></li>
-                            <li class="nav-item"><span class="icon-bookmark-empty"></span><a href="trabalho.html"
-                                    class="nav-link">Trabalho</a></li>
-                            <li class="nav-item"><span class="icon-folder-open-empty icons"></span><a
+                            <li class="nav-item arquivo"><span class="icon-folder-open-empty icons"></span><a
                                     href="arquivo.html" class="nav-link">Arquivo</a></li>
                             <li class="nav-item"><span class="icon-trash-empty icons"></span><a href="lixeira.html"
                                     class="nav-link">Lixeira</a></li>
@@ -83,38 +76,26 @@
 
             <div class="container-fluid notas-container">
                 <div class="row"><!--Row-->
-                    <div class="col-12">
-                        <div class="notas nota1 nota-azul">
-                            <h2 class="titulo-notas">Nota 1</h2>
-                            <p class="conteudo-notas">Conteúdo</p>
-                            <form class="marcador"></form>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="notas nota2 nota-laranja">
-                            <h2 class="titulo-notas">Nota 2</h2>
-                            <p class="conteudo-notas">Conteúdo</p>
-                            <form class="marcador"></form>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="notas nota3">
-                            <h2 class="titulo-notas">Nota 3</h2>
-                            <p class="conteudo-notas">Conteúdo</p>
-                            <form class="marcador"></form>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="notas nota4">
-                            <h2 class="titulo-notas">Nota 4</h2>
-                            <p class="conteudo-notas">Conteúdo</p>
-                            <form class="marcador"></form>
-                        </div>
-                    </div>
+                    
                 </div><!--//Row-->
             </div>
         </div><!--//Conteúdo-->
     </div><!--//MenuLateral e ConteudoGeral-->
+
+    <div class="nota-aberta">
+        <div class="notas nota1">
+            <input type="hidden" id="id-nota-aberta">
+            <h2 class="titulo-notas"></h2>
+            <p class="conteudo-notas"></p>
+            <div class="nota-controles">
+                <button class=""><i class="icon-trash-empty"></i></button>
+                <button class=""><i class="icon-folder-open-empty"></i></button>
+                <button class="js-fechar">Fechar</button>
+            </div>
+            <div class="nota-marcadores">                
+            </div>
+        </div>
+    </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -123,6 +104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
     <script src="js/darktheme.js"></script>
 
     <script>
