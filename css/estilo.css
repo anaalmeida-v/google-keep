@@ -325,19 +325,15 @@ li .icon-bookmark-empty {
     width: 100%;
 }
 .notas {
-    margin: 10px auto;
     text-align: center;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
     max-width: 450px;
     min-width: 300px;
     cursor: pointer;
 }
 
-.notas:hover {
-    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
-}
+
 
 .titulo-notas {
     color: #202124;
@@ -369,6 +365,36 @@ li .icon-bookmark-empty {
 .nota-azul .icones-nota-aberta i:hover{
     background-color: #a3bde6;
     color: #171a20;
+    padding: 5px 5px 5px 0;
+}
+
+.nota-roxa {
+    background-color: #fdcfe8;
+    border-color: #fdcfe8;
+}
+
+.nota-roxa .icones-nota-aberta i{
+    color: #171a20;
+}
+
+.nota-roxa .icones-nota-aberta i:hover{
+    color: #171a20;
+    background-color: #fdcfe8;
+    padding: 5px 5px 5px 0;
+}
+
+.nota-verde {
+    background-color: #ccff90;
+    border-color: #ccff90;
+}
+
+.nota-verde .icones-nota-aberta i{
+    color: #171a20;
+}
+
+.nota-verde .icones-nota-aberta i:hover{
+    color: #171a20;
+    background-color: #ccff90;
     padding: 5px 5px 5px 0;
 }
 
@@ -547,6 +573,36 @@ li .icon-bookmark-empty {
     padding: 5px 5px 5px 0;
 }
 
+.dark .nota-roxa {
+    background-color: #5b2245;
+    border-color: #5b2245;
+}
+
+.dark .nota-roxa .icones-nota-aberta i{
+    color: #bec6d1;
+}
+
+.dark .nota-roxa .icones-nota-aberta i:hover{
+    color: #e2e6ea;
+    background-color: #5b2245;
+    padding: 5px 5px 5px 0;
+}
+
+.dark .nota-verde {
+    background-color: #345920;
+    border-color: #345920;
+}
+
+.dark .nota-verde .icones-nota-aberta i{
+    color: #bec6d1;
+}
+
+.dark .nota-verde .icones-nota-aberta i:hover{
+    color: #e2e6ea;
+    background-color: #345920;
+    padding: 5px 5px 5px 0;
+}
+
 .dark .nota-laranja {
     background-color: #5c2b29;
     border-color: #5c2b29;
@@ -698,4 +754,20 @@ li .icon-bookmark-empty {
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
     transition: all linear 1s;
     overflow-y: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    margin: 15px 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-auto-rows: 20px;
+}
+
+.grid-item {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+.grid-item:hover {
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
 }

@@ -16,16 +16,16 @@
     }
 
     const renderizarNotas = (id, titulo, conteudo, cor, marcadores) => {
-        const conteudoResumido = conteudo.substr(0, 200) + '...';
-        const notaHtml = `<div class="col-12">
-                            <div class="notas js-nota ${cor}">
+        const conteudoResumido = conteudo.substr(0, 600) + '...';
+        const notaHtml = `<div class="grid-item ${cor}">
+                            <div class="notas js-nota">
                                 <input type="hidden" class="id-nota" value="${id}">
                                 <h2 class="titulo-notas">${titulo}</h2>
                                 <p class="conteudo-notas">${conteudoResumido}</p>
                                 <p>${marcadores.join(', ')}</p>
                             </div>
                         </div>`;
-        document.querySelector('.notas-container .row').innerHTML += notaHtml; 
+        document.querySelector('.notas-container .grid-container').innerHTML += notaHtml; 
     }
 
     const renderizarMarcadoresMenu = (marcador) => {
@@ -46,7 +46,7 @@
     }
 
     const formatarNotas = (dados) => {
-        document.querySelector('.notas-container .row').innerHTML = "";
+        document.querySelector('.notas-container .grid-container').innerHTML = "";
         for(let index = 0; index < dados.length; index++){
             const { id, titulo, conteudo, cor, marcadores, arquivado, excluido } = dados[index];
             if(arquivado === false && excluido === false) {
@@ -54,13 +54,16 @@
             }
         }
         atribuirEventos();
+        setTimeout(() => {            
+            resizeAllGridItems();
+        }, 100);
     }
 
     const filtrarNotasPorMarcador = (dados, marcador) => {
         const dadosFiltrados = dados.filter(dado => {
             return dado.marcadores.indexOf(marcador) !== -1;
         });
-        document.querySelector('.notas-container .row').innerHTML = "";
+        document.querySelector('.notas-container .grid-container').innerHTML = "";
         for(let index = 0; index < dadosFiltrados.length; index++){
             const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
             renderizarNotas(id, titulo, conteudo, cor, marcadores);
@@ -70,7 +73,7 @@
 
     const filtrarNotasPorArquivado = (dados) => {
         const dadosFiltrados = dados.filter(dado => dado.arquivado === true);
-        document.querySelector('.notas-container .row').innerHTML = "";
+        document.querySelector('.notas-container .grid-container').innerHTML = "";
         for(let index = 0; index < dadosFiltrados.length; index++){
             const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
             renderizarNotas(id, titulo, conteudo, cor, marcadores);
@@ -80,7 +83,7 @@
 
     const filtrarNotasPorExcluido = (dados) => {
         const dadosFiltrados = dados.filter(dado => dado.excluido === true);
-        document.querySelector('.notas-container .row').innerHTML = "";
+        document.querySelector('.notas-container .grid-container').innerHTML = "";
         for(let index = 0; index < dadosFiltrados.length; index++){
             const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
             renderizarNotas(id, titulo, conteudo, cor, marcadores);
@@ -211,4 +214,26 @@
     const marcadoresResumidos = extrairMarcadoresUnicos(dados);    
     marcadoresResumidos.forEach(marcador => renderizarMarcadoresMenu(marcador));
     formatarNotas(dados);
+    
+    function resizeGridItem(item){
+        grid = document.getElementsByClassName("grid-container")[0];
+        rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+        rowSpan = Math.ceil((item.querySelector('.notas').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+        item.style.gridRowEnd = "span "+rowSpan;
+        console.log(item.querySelector('.notas').getBoundingClientRect().height);
+    }
+      
+    function resizeAllGridItems(){
+    allItems = document.getElementsByClassName("grid-item");
+    for(x=0;x<allItems.length;x++){
+        resizeGridItem(allItems[x]);
+    }
+    }
+    
+    function resizeInstance(instance){
+    item = instance.elements[0];
+    resizeGridItem(item);
+    }
+    window.addEventListener("resize", resizeAllGridItems);
 })();
