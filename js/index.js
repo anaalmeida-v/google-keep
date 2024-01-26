@@ -1,5 +1,10 @@
-(async () => {
-    let dados = await (await fetch('./dados.json')).json();
+(async () => {    
+    const getDados = async () => {
+        return  await (await fetch('./dados.json')).json();
+    }
+
+    let dados = await getDados();
+
     const extrairMarcadoresUnicos = (dados) => {
         const marcadoresUnicos = [];
         for(let index = 0; index < dados.length; index++){
@@ -15,10 +20,14 @@
         return marcadoresUnicos;
     }
 
-    const renderizarNotas = (id, titulo, conteudo, cor, marcadores) => {
+    const limparContainerNotas = () => {
+        document.querySelector('.notas-container .grid-container').innerHTML = "";
+    }
+
+    const renderizarNota = (id, titulo, conteudo, cor, marcadores) => {
         const conteudoResumido = conteudo.substr(0, 600) + '...';
-        const notaHtml = `<div class="grid-item ${cor}">
-                            <div class="notas js-nota">
+        const notaHtml = `<div class="grid-item js-nota ${cor}">
+                            <div class="notas">
                                 <input type="hidden" class="id-nota" value="${id}">
                                 <h2 class="titulo-notas">${titulo}</h2>
                                 <p class="conteudo-notas">${conteudoResumido}</p>
@@ -26,6 +35,21 @@
                             </div>
                         </div>`;
         document.querySelector('.notas-container .grid-container').innerHTML += notaHtml; 
+    }
+
+    const excluirArquivar = (key) => {
+        const idElement = document.getElementById('id-nota-aberta');
+        if(!idElement) return;
+
+        const id = idElement.value * 1;
+        dados = dados.map(dado => {
+            if(dado.id === id){
+                dado[key] = true;
+            }
+            return dado;
+        });
+        fecharNota();
+        renderizarNotas(dados);
     }
 
     const renderizarMarcadoresMenu = (marcador) => {
@@ -45,15 +69,14 @@
         document.querySelector('#nav-principal').insertBefore(li, document.querySelector('#nav-principal .arquivo'));
     }
 
-    const formatarNotas = (dados) => {
-        document.querySelector('.notas-container .grid-container').innerHTML = "";
+    const renderizarNotas = (dados, mostrarArquivado = false, mostrarExcluido = false) => {
+        limparContainerNotas();
         for(let index = 0; index < dados.length; index++){
             const { id, titulo, conteudo, cor, marcadores, arquivado, excluido } = dados[index];
-            if(arquivado === false && excluido === false) {
-                renderizarNotas(id, titulo, conteudo, cor, marcadores);
+            if(arquivado === mostrarArquivado || x == 2 && excluido === mostrarExcluido) {
+                renderizarNota(id, titulo, conteudo, cor, marcadores);
             }
         }
-        atribuirEventos();
         setTimeout(() => {            
             resizeAllGridItems();
         }, 100);
@@ -63,32 +86,12 @@
         const dadosFiltrados = dados.filter(dado => {
             return dado.marcadores.indexOf(marcador) !== -1;
         });
-        document.querySelector('.notas-container .grid-container').innerHTML = "";
-        for(let index = 0; index < dadosFiltrados.length; index++){
-            const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
-            renderizarNotas(id, titulo, conteudo, cor, marcadores);
-        }
-        atribuirEventos();
+        renderizarNotas(dadosFiltrados);
     }
 
-    const filtrarNotasPorArquivado = (dados) => {
-        const dadosFiltrados = dados.filter(dado => dado.arquivado === true);
-        document.querySelector('.notas-container .grid-container').innerHTML = "";
-        for(let index = 0; index < dadosFiltrados.length; index++){
-            const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
-            renderizarNotas(id, titulo, conteudo, cor, marcadores);
-        }
-        atribuirEventos();
-    }
-
-    const filtrarNotasPorExcluido = (dados) => {
-        const dadosFiltrados = dados.filter(dado => dado.excluido === true);
-        document.querySelector('.notas-container .grid-container').innerHTML = "";
-        for(let index = 0; index < dadosFiltrados.length; index++){
-            const { id, titulo, conteudo, cor, marcadores } = dadosFiltrados[index];
-            renderizarNotas(id, titulo, conteudo, cor, marcadores);
-        }
-        atribuirEventos();
+    const filtrarNotasPor = (dados, key, mostrarArquivado, mostrarExcluido) => {
+        const dadosFiltrados = dados.filter(dado => dado[key] === true);
+        renderizarNotas(dadosFiltrados, mostrarArquivado, mostrarExcluido);
     }
 
     const abrirNota = (id) => {
@@ -115,125 +118,47 @@
         document.querySelector('.nota-aberta .notas').classList.remove('nota-laranja');
         document.querySelector('.nota-aberta .nota-marcadores').innerHTML = '';
     }
-    const atribuirEventos = () => {
 
-        document.querySelectorAll('.js-marcador').forEach(function(marcador){
-            marcador.addEventListener('click', function(event){
-                let nomeMarcador = '';
-                if(event.target.tagName === 'LI'){
-                    nomeMarcador = event.target.querySelector('a').textContent;
-                } else {
-                    nomeMarcador = event.target.parentElement.querySelector('a').textContent;
-                }
-                filtrarNotasPorMarcador(dados, nomeMarcador);
-            }, false);
-        });
-
-        document.querySelectorAll('.js-menu-arquivo').forEach(function(marcador){
-            marcador.addEventListener('click', function(event){
-                let nomeMarcador = '';
-                if(event.target.tagName === 'LI'){
-                    nomeMarcador = event.target.querySelector('a').textContent;
-                } else {
-                    nomeMarcador = event.target.parentElement.querySelector('a').textContent;
-                }
-                filtrarNotasPorArquivado(dados);
-            }, false);
-        });
-
-        document.querySelectorAll('.js-menu-lixeira').forEach(function(marcador){
-            marcador.addEventListener('click', function(event){
-                let nomeMarcador = '';
-                if(event.target.tagName === 'LI'){
-                    nomeMarcador = event.target.querySelector('a').textContent;
-                } else {
-                    nomeMarcador = event.target.parentElement.querySelector('a').textContent;
-                }
-                filtrarNotasPorExcluido(dados, nomeMarcador);
-            }, false);
-        });
-    
-        document.querySelectorAll('.js-nota').forEach(nota => {
-            nota.addEventListener('click', event => {
-                let elementoPai = event.target;
-                if(event.target.tagName !== 'DIV' || event.target.classList.contains('notas')){
-                    elementoPai = event.target.parentElement;
-                }
-                const id = elementoPai.querySelector('.id-nota').value * 1;
-                abrirNota(id);
-            });
-        });
-        
-        document.querySelector('.js-fechar').addEventListener('click', () => {
+    document.body.addEventListener('click', (event) => {
+        if(event.target.classList.contains('nota-aberta')) {
             fecharNota();
-        });
-    
-        document.querySelector('.js-arquivar').addEventListener('click', () => {
-            const idElement = document.getElementById('id-nota-aberta');
-            if(!idElement) return;
-    
-            const id = idElement.value * 1;
-    
-            dados = dados.map(dado => {
-                if(dado.id === id){
-                    dado.arquivado = true;
-                }
-                return dado;
-            });
+        }
+        if(event.target.closest('.js-mostrar-tudo')) {
+            renderizarNotas(dados);
+        }
+        if(event.target.closest('.js-excluir')) {
+            excluirArquivar('excluido')
+        }
+        if(event.target.closest('.js-arquivar')) {
+            excluirArquivar('arquivado')
+        }
+        if(event.target.closest('.js-fechar')) {
             fecharNota();
-            formatarNotas(dados);
-        });
-    
-        document.querySelector('.js-excluir').addEventListener('click', () => {
-            const idElement = document.getElementById('id-nota-aberta');
-            if(!idElement) return;
-    
-            const id = idElement.value * 1;
-    
-            dados = dados.map(dado => {
-                if(dado.id === id){
-                    dado.excluido = true;
-                }
-                return dado;
-            });
-            fecharNota();
-            formatarNotas(dados);
-        });
-    
-        document.querySelector('.nota-aberta').addEventListener('click', event => {
-            if(event.target.classList.contains('nota-aberta')) {
-                fecharNota();
+        }
+        if(event.target.closest('.js-nota')){
+            const id = event.target.closest('.js-nota').querySelector('.id-nota').value * 1;
+            abrirNota(id);
+        }
+        if(event.target.closest('.js-menu-lixeira')) {
+            filtrarNotasPor(dados, 'excluido', false, true);
+        }
+        if(event.target.closest('.js-menu-arquivo')) {
+            filtrarNotasPor(dados, 'arquivado', true, false);
+        }
+        if(event.target.closest('.js-marcador')) {
+            let nomeMarcador = '';
+            if(event.target.closest('.js-marcador')){
+                nomeMarcador = event.target.closest('.js-marcador').querySelector('a').textContent;
+            } else {
+                nomeMarcador = event.target.querySelector('a').textContent;
             }
-        });
-
-        document.querySelector('.js-mostrar-tudo').addEventListener('click', () => {
-            formatarNotas(dados);
-        });
-    }
+            filtrarNotasPorMarcador(dados, nomeMarcador);
+        }
+    });
 
     const marcadoresResumidos = extrairMarcadoresUnicos(dados);    
     marcadoresResumidos.forEach(marcador => renderizarMarcadoresMenu(marcador));
-    formatarNotas(dados);
-    
-    function resizeGridItem(item){
-        grid = document.getElementsByClassName("grid-container")[0];
-        rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-        rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-        rowSpan = Math.ceil((item.querySelector('.notas').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-        item.style.gridRowEnd = "span "+rowSpan;
-        console.log(item.querySelector('.notas').getBoundingClientRect().height);
-    }
-      
-    function resizeAllGridItems(){
-    allItems = document.getElementsByClassName("grid-item");
-    for(x=0;x<allItems.length;x++){
-        resizeGridItem(allItems[x]);
-    }
-    }
-    
-    function resizeInstance(instance){
-    item = instance.elements[0];
-    resizeGridItem(item);
-    }
+    renderizarNotas(dados);
     window.addEventListener("resize", resizeAllGridItems);
+    resizeAllGridItems();
 })();
